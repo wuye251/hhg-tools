@@ -1,0 +1,15 @@
+# Gunicorn 配置文件
+bind = "127.0.0.1:5001"
+workers = 4
+worker_class = "sync"
+worker_connections = 1000
+timeout = 30
+keepalive = 2
+max_requests = 1000
+max_requests_jitter = 100
+preload_app = True
+daemon = False
+pidfile = "/opt/hhg-tools/backend/gunicorn.pid"
+accesslog = "/opt/hhg-tools/backend/logs/access.log"
+errorlog = "/opt/hhg-tools/backend/logs/error.log"
+loglevel = "info"
